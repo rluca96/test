@@ -102,7 +102,7 @@ public class HelloDragAndDrop extends Application {
                 /* show to the user that it is an actual gesture target */
                 if (event.getGestureSource() != target &&
                         event.getDragboard().hasString()) {
-                    target.setFill(Color.GREEN);
+                    target.setFill(Color.RED);
                 }
                 
                 event.consume();
