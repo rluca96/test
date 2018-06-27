@@ -1,4 +1,3 @@
-package sample;
 
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -22,26 +21,10 @@ public class Main extends Application {
     @FXML
     Circle circle;
 
-    private double mouseX, mouseY;
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Hello World");
-        circle.setOnMousePressed(e->{
-            mouseX = e.getSceneX();
-            mouseY = e.getSceneY();
-            circle.setCursor(Cursor.MOVE);
-        });
-        circle.setOnMouseDragged(e->{
-            double x;
-            double y;
-            x = e.getSceneX() - mouseX;
-            y = e.getSceneY() - mouseY;
-            circle.relocate(x, y);
-        });
-        circle.setOnMouseReleased(e->{
-            circle.setCursor(Cursor.HAND);
-        });
 
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
